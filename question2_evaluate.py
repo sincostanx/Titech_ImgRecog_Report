@@ -11,9 +11,8 @@ from tqdm.auto import tqdm
 
 from question_utils import getLogger
 from validation_lq.data_utils import prepare_dataloader
-from validation_lq.tinyface_helper import get_all_files
-from validation_lq.validate_tinyface import (DIR_FAR, infer, inner_product,
-                                             load_pretrained_model, str2bool)
+from validation_lq.tinyface_helper import get_all_files, DIR_FAR, inner_product
+from validation_lq.validate_tinyface import infer, load_pretrained_model, str2bool
 
 logger = getLogger(__name__, "INFO")
 

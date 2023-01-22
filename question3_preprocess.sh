@@ -17,6 +17,9 @@ face_postfix='_face_hau'
 
 denoising_postfix='_denoised'
 
+# gaussian filter
+python question3_gaussian_filter.py
+
 # face hallucination
 for dir in "${dir_list_face[@]}"; do
     python SISN-Face-Hallucination/test.py --model SISN --scale 4 --pretrain "$face_hallucination_model_path" --dataset_root "$dir" --save_root "$dir$face_postfix"

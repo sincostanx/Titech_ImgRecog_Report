@@ -1,12 +1,21 @@
-import torch
-import numpy as np
-from tqdm import tqdm
-from .data_utils import *
-import argparse
-import pandas as pd
-from .tinyface_helper import *
-import sys, os
+import os
+import sys
+
+# sys.path.append("../validation_lq")
 sys.path.insert(0, os.path.dirname(os.getcwd()))
+
+import argparse
+
+import numpy as np
+import pandas as pd
+import torch
+from tqdm import tqdm
+
+from validation_lq.data_utils import prepare_dataloader
+from validation_lq.tinyface_helper import TinyFaceTest
+# import data_utils
+# import tinyface_helper
+
 import net
 
 def str2bool(v):
@@ -141,7 +150,7 @@ if __name__ == '__main__':
     model = load_pretrained_model(args.model_name, adaface_models)
     model.to('cuda:{}'.format(args.gpu))
 
-    tinyface_test = tinyface_helper.TinyFaceTest(tinyface_root=args.data_root,
+    tinyface_test = TinyFaceTest(tinyface_root=args.data_root,
                                                  alignment_dir_name='aligned_pad_0.1_pad_high')
 
     # set save root
@@ -154,7 +163,7 @@ if __name__ == '__main__':
 
     img_paths = tinyface_test.image_paths
     print('total images : {}'.format(len(img_paths)))
-    dataloader = data_utils.prepare_dataloader(img_paths,  args.batch_size, num_workers=16)
+    dataloader = prepare_dataloader(img_paths,  args.batch_size, num_workers=16)
     features, norms = infer(model, dataloader, use_flip_test=args.use_flip_test, fusion_method=args.fusion_method)
     results = tinyface_test.test_identification(features, ranks=[1,5,20])
     print(results)

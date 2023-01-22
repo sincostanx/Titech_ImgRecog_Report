@@ -56,7 +56,7 @@ if __name__ == '__main__':
 
     for current_dir in dir_list:
         current_root = os.path.join(args.root, current_dir)
-        logger.info(f"Downsampling {current_root}")
+        logger.info(f"Processing {current_root}")
         for filename in tqdm(get_all_files(current_root)):
             img = Image.open(filename)
 

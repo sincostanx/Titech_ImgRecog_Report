@@ -6,10 +6,11 @@ from PIL import Image
 from torchvision import transforms
 from tqdm.auto import tqdm
 
-from question_utils import getLogger
+from question_utils import getLogger, set_seed
 from validation_lq.tinyface_helper import get_all_files
 
 logger = getLogger(__name__, "INFO")
+set_seed(0)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Fix dataset')
