@@ -29,7 +29,7 @@ Evaluation results are available as a csv file at ```./validation_lq/tinyface_re
 ## Task 2: Evaluating on custom dataset
 Here, we describe steps for reproducing results of ResNet100 (trained with MS1MV2) on MWITS-20 (our original dataset). Do not forget to download the pretrained model as described in Task 1. To protect privacy of people in images, we do not share the original images. Still, the pre-processing code is available at ```question2_preprocess.py``` as a reference.
 
-- Download the preprocessed MWITS-20 from [here](xxx). Extract the zip file in directory ```./data/```.
+- Download the preprocessed MWITS-20 from [here](https://drive.google.com/file/d/1g6l2NwJxHOoVT54WYNhN0ZwZb-dkz7n3/view?usp=sharing). Extract the zip file in directory ```./data/```.
 - Downsample and add Gaussian noise to the original dataset by running the following script.
 ```bash
 bash question2_downsample.sh
