@@ -1,6 +1,6 @@
 # ART.T551 (Final Report)
 
-This repository contains codes to reproduce experiments presented in [the final report](https://drive.google.com/file/d/1dsRsl-j0uV9iWdGbOPw7SfHvkBT_qMSR/view?usp=sharing) of Image and Video Recognition class (ART.T551) in 2022, written by Worameth Chinchuthakun (22M51878). Please clone this repository directly instead of cloning the original repositories separately because we modified some parts of their codes.
+This repository contains codes to reproduce experiments presented in [the final report](https://drive.google.com/file/d/1xAKsZI83lS1kbqrXI2LUV_4qRt2lIfc9/view?usp=sharing) of Image and Video Recognition class (ART.T551) in 2022, written by Worameth Chinchuthakun (22M51878). Please clone this repository directly instead of cloning the original repositories separately because we modified some parts of their codes.
 
 ## Installation
 Please confirm your CUDA version before proceed.
